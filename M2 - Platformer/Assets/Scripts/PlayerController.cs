@@ -69,7 +69,8 @@ public class PlayerController : MonoBehaviour {
     void WalkHandler()
     {
         // Input on x (Horizontal)
-        float hAxis = Input.GetAxis("Vertical");
+        float hAxis = Input.GetAxis("Horizontal"); 
+        // Bug Two Found: "Horzinotal" incorrectly labelled as "Vertical"
 
         // Input on z (Vertical)
         float vAxis = Input.GetAxis("Vertical");
