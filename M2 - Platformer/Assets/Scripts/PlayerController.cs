@@ -158,7 +158,10 @@ public class PlayerController : MonoBehaviour {
             // Play sound
             coinSound.Play();
 
-            
+            // Bug 3 - Line of code to destroy coin (other.gameobject) was missing 
+            Destroy(other.gameObject);
+        
+
         }
         else if(other.CompareTag("Enemy"))
         {
@@ -169,6 +172,7 @@ public class PlayerController : MonoBehaviour {
         {
             // Send player to the next level
             GameManager.instance.IncreaseLevel();
+
         }
     }
 

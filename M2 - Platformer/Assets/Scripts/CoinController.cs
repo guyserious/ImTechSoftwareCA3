@@ -15,4 +15,6 @@ public class CoinController : MonoBehaviour {
         // rotate coin
         transform.Rotate(Vector3.up * angleRot, Space.World);
 	}
+
+
 }
