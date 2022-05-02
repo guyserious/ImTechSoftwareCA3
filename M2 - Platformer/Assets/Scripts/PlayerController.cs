@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -56,10 +56,12 @@ public class PlayerController : MonoBehaviour {
     // check if the player fell
     void FallHandler()
     {
-        if(transform.position.y >= minY)
+        if(transform.position.y <= minY)
+        // Bug One Found: > used instead of < (so just being on ground plain caused gameover)
         {
             // Game over!
-            GameManager.instance.GameOver();
+            GameManager.instance.GameOver(); 
+            
         }
     }
 
@@ -145,7 +147,7 @@ public class PlayerController : MonoBehaviour {
         return (grounded1 || grounded2 || grounded3 || grounded4);
     }
 
-    void OnTriggerEnter(Collider other)
+     void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Coin"))
         {
