@@ -54,7 +54,8 @@ public class EnemyController : MonoBehaviour {
         // if we can move further, let's move further!
         else
         {
-            transform.position += new Vector3(movementY, 0, 0);
+            transform.position += new Vector3(0, movementY, 0);
+            // Bug 4 - MovementY incorectly entered as x value within Vector 
         }
     }
 }
